@@ -4,6 +4,7 @@ import java.awt.Canvas;
 
 import javax.swing.JFrame;
 
+import de.domi382.rpg.main.Game;
 import de.domi382.rpg.string.Strings;
 
 public class Main extends JFrame{
@@ -22,6 +23,7 @@ public class Main extends JFrame{
 		canvas.setSize(window.WIDTH, window.HEIGHT);
 		
 		window.add(canvas);
+		Game game = new Game(canvas, window);
 	}
 
 }
