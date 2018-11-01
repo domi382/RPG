@@ -2,17 +2,9 @@ package de.domi382.rpg.states;
 
 import java.awt.Graphics;
 
+import de.domi382.rpg.main.Game;
+
 public abstract class Gamestates {
-	Gamestates gamestate;
-	public Gamestates() {
-		
-	}
-	public Gamestates getState() {
-		return (Gamestates) this.gamestate;
-	}
-	public void setState(Gamestates state) {
-		this.gamestate = state;
-	}
-	public abstract void tick();
+	public abstract void tick(Game g);
 	public abstract void render(Graphics g);
 }
