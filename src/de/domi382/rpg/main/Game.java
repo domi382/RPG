@@ -22,23 +22,25 @@ public class Game implements Runnable{
 	PauseState ps = new PauseState();
 	MenuState ms = new MenuState();
 	
-	public Game(Canvas canvas, JFrame window) {
+	public void init(Canvas canvas, JFrame window) {
+		this.canvas = canvas;
 		sm.setState(gs); 
 		canvas.createBufferStrategy(3);
 	}
 	
-	public void init() {
-		
-	}
-	
 	public void run() {
 		if (isRunning) {
-			render(g);
-			tick();
+			try {
+				render(g);
+				tick();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
-	public void start () {
+	public void start (Canvas canvas, JFrame window) {
+		init(canvas, window);
 	      if (t == null) {
 	         t = new Thread (this, "Game");
 	         t.start ();
